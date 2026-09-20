@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "minRoiPercent": 5.0,
+  "minProfitCents": 10000,
+  "sellMarkupPercent": 90.0,
+  "rateLimitMs": 5000,
+  "maxSpendCents": 100000000,
+  "blacklist": []
+}
