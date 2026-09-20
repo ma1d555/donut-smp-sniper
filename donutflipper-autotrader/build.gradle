@@ -1,0 +1,43 @@
+plugins {
+	id 'fabric-loom' version '1.17.19'
+	id 'java'
+	id 'base'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+	mavenCentral()
+	maven { url = 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// GSON for config only
+	implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+}
+
+jar {
+	duplicatesStrategy = 'exclude'
+	from ("src/main/resources") {
+		include "fabric.mod.json"
+	}
+}
