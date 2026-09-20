@@ -1,0 +1,14 @@
+  /autotrader                          Show command help
+  /autotrader enable                   Turn AutoTrader on
+  /autotrader disable                  Turn AutoTrader off
+  /autotrader status                   Show all current settings
+
+  /autotrader roi <percent>            Minimum ROI required to consider a deal      (default: 5%)
+  /autotrader profit <dollars>         Minimum profit required to consider a deal   (default: $100)
+  /autotrader maxspend <dollars>       Highest price willing to pay per item        (default: $1,000,000)
+  /autotrader ratelimit <ms>           Cooldown before re-considering the same item (default: 5000ms)
+
+  /autotrader markup <percent>         List price as % of true value (ask+profit)   (default: 90%)
+
+  /autotrader blacklist <item name>    Toggle an item on/off the do-not-buy list
+  /autotrader blacklist                Show the current blacklist
